@@ -81,6 +81,9 @@ i {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.3s ease;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .dropdawn.show {
@@ -307,6 +310,10 @@ input:focus::placeholder {
     height: 35px;
     border-radius: 5px;
     box-shadow: 0px 0px 30px 1px #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 
   }
   .buttonS:hover{

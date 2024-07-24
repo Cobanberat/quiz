@@ -1,6 +1,6 @@
 <div class="header">
     <div class="sol">
-        <span><a href="">Ana Sayfa</a></span>
+        <span><a href="admin.php">Admin</a></span>
         <span><a href="">Quizler</a></span>
         <span><a href="">Anketler</a></span>
     </div>

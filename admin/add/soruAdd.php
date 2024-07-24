@@ -1,5 +1,5 @@
 <div class="textA"><Span>Soru Ekle</Span></div>
-<form class="formA" action="" method="post">
+<form class="formA" action="../form/questionsForm.php" method="post">
     <div class="labelForm">
         <label for="">Soru</label>
         <textarea type="text" placeholder="" name="soruAdd"></textarea>
@@ -8,6 +8,9 @@
         <div class="select">
             <select name="soruQ" id="select">
                 <option value="0" selected>quiz Seç</option>
+                <?php foreach($quiz as $value): ?>
+                    <option value="<?= $value["id"] ?>"><?= $value["name"] ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
     </div>
