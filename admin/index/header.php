@@ -1,8 +1,9 @@
 <div class="header">
     <div class="sol">
         <span><a href="admin.php">Admin</a></span>
-        <span><a href="">Quizler</a></span>
-        <span><a href="">Anketler</a></span>
+        <span><a href="quizler.php">Quizler</a></span>
+        <span><a href="kategoriler.php">Kategoriler</a></span>
+        <span><a href="AnaSayfaMain.php">Ana Sayfa</a></span>
     </div>
     <div class="sag">
         <div class="svgİ" id="svgİ">

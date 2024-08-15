@@ -1,1 +1,0 @@
-<div class="textA"><Span>Anket Ekle</Span></div>

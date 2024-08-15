@@ -24,11 +24,11 @@
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="user" class="label">Kullanıcı Adı</label>
-                            <input id="user" name="user" type="text" class="input">
+                            <input id="user" name="user" type="text" class="input" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Şifre</label>
-                            <input id="pass" name="pass" type="password" class="input" data-type="password">
+                            <input id="pass" name="pass" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="group">
                             <input id="check" type="checkbox" class="check" checked>
@@ -47,19 +47,19 @@
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="regUser" class="label">Kullanıcı Adı</label>
-                            <input id="regUser" name="user" type="text" class="input">
+                            <input id="regUser" name="user" type="text" class="input" required>
                         </div>
                         <div class="group">
                             <label for="regPass" class="label">Şifre</label>
-                            <input id="regPass" name="pass" type="password" class="input" data-type="password">
+                            <input id="regPass" name="pass" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="group">
                             <label for="regTryPass" class="label">Şifreyi Tekrar Girin</label>
-                            <input id="regTryPass" name="tryPass" type="password" class="input" data-type="password">
+                            <input id="regTryPass" name="tryPass" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="group">
                             <label for="regGmail" class="label">E-Posta Adresi</label>
-                            <input id="regGmail" name="gmail" type="text" class="input">
+                            <input id="regGmail" name="gmail" type="email" class="input" required>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Kayıt Ol">

@@ -1,9 +1,8 @@
 <?php if (isset($_SESSION["user_id"])) { ?>
     <div id="header">
         <div class="sol" id="sol">
-            <a href=""><span>Ana Sayfa</span></a>
-            <a href=""><span>Quizler</span></a>
-            <a href=""><span>Anketler</span></a>
+            <a href="index.php"><span>Ana Sayfa</span></a>
+            <a href="quizList.php"><span>Quizler</span></a>
         </div>
         <div class="sag">
             <div class="svgİ" id="svgİ">
