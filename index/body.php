@@ -12,60 +12,59 @@
                 <div class="img1"><img src="../img/<?= $AnS["img"] ?>" alt=""></div>
             </div>
         </div>
-    </div>
-    <div class="spanA">
-        <span class="MainSpan">
-            Örnek Quizler
-        </span>
-    </div>
-    <?php $quiz = $conn->query("select * from quizler where id limit 8")->fetchAll(PDO::FETCH_ASSOC); ?>
-    <div class="cards">
-        <?php $quiz = $conn->query("select * from quizler where id")->fetchAll(PDO::FETCH_ASSOC); ?>
-        <?php foreach ($quiz as $row) : ?>
-            <div id="cardC" class="quiz<?= $row['kategori_id'] ?>">
-                <div class="ust"></div>
-                <div id="img">
-                    <img src="../img/<?= $row["img"] ?>" alt="">
+
+        <div class="spanA">
+            <span class="MainSpan">
+                Örnek Quizler
+            </span>
+        </div>
+        <?php $quiz = $conn->query("select * from quizler where id limit 8")->fetchAll(PDO::FETCH_ASSOC); ?>
+        <div class="cards">
+            <?php $quiz = $conn->query("select * from quizler where id")->fetchAll(PDO::FETCH_ASSOC); ?>
+            <?php foreach ($quiz as $row) : ?>
+                <div id="cardC" class="quiz<?= $row['kategori_id'] ?>">
+                    <div class="ust"></div>
+                    <div id="img">
+                        <img src="../img/<?= $row["img"] ?>" alt="">
+                    </div>
+                    <div class="text">
+                        <span><?= $row["name"] ?></span>
+                    </div>
+                    <div class="alt">
+                        <a href="solve.php?id=<?= $row["id"]; ?>"> <button class="buttonS">Çözmeye Başla</button></a>
+                    </div>
                 </div>
-                <div class="text">
-                    <span><?= $row["name"] ?></span>
+            <?php endforeach; ?>
+        </div>
+        <br>
+    <?php } else { ?>
+        <br><br>
+        <div class="body">
+            <div class="body_text">
+                <div class="text_main">
+                    <span>Yüz Binlerce soru ve test Çözün kendinizi Geliştirmeye</span>
+                    <span>başlayın</span>
+                    <br>
+                    <a href="../login/login.php"><button id="bottone1"><strong>Hemen Başla</strong></button></a>
                 </div>
-                <div class="alt">
-                    <a href="solve.php?id=<?= $row["id"]; ?>"> <button class="buttonS">Çözmeye Başla</button></a>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <br>
-<?php } else { ?>
-    <br><br>
-    <div class="body">
-        <div class="body_text">
-            <div class="text_main">
-                <span>Yüz Binlerce soru ve test Çözün kendinizi Geliştirmeye</span>
-                <span>başlayın</span>
-                <br>
-                <a href="../login/login.php"><button id="bottone1"><strong>Hemen Başla</strong></button></a>
             </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="cards">
-        <?php $quiz = $conn->query("select * from quizler where id limit 8")->fetchAll(PDO::FETCH_ASSOC); ?>
-        <?php foreach ($quiz as $row) : ?>
-            <div id="cardC" class="quiz<?= $row['kategori_id'] ?>">
-                <div class="ust"></div>
-                <div id="img">
-                    <img src="../img/<?= $row["img"] ?>" alt="">
+        <br>
+        <br>
+        <br>
+        <div class="cards">
+            <?php $quiz = $conn->query("select * from quizler where id limit 8")->fetchAll(PDO::FETCH_ASSOC); ?>
+            <?php foreach ($quiz as $row) : ?>
+                <div id="cardC" class="quiz<?= $row['kategori_id'] ?>">
+                    <div class="ust"></div>
+                    <div id="img">
+                        <img src="../img/<?= $row["img"] ?>" alt="">
+                    </div>
+                    <div class="text">
+                        <span><?= $row["name"] ?></span>
+                    </div>
                 </div>
-                <div class="text">
-                    <span><?= $row["name"] ?></span>
-                </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+    <?php } ?>
     </div>
-<?php } ?>
-
-

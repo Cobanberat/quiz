@@ -4,6 +4,7 @@
         <span><a href="quizler.php">Quizler</a></span>
         <span><a href="kategoriler.php">Kategoriler</a></span>
         <span><a href="AnaSayfaMain.php">Ana Sayfa</a></span>
+        <span><a href="istatistikler.php">İstatistikler</a></span>
     </div>
     <div class="sag">
         <div class="svgİ" id="svgİ">

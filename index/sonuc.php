@@ -1,7 +1,9 @@
 <?php
 session_start();
 include "../connect/connect.php";
-$quizId = $_POST["id"];
+
+if(isset($_POST["id"])){
+    $quizId = $_POST["id"];
 
 $dogru_cevap = 0;
 $yanlisC = 0;
@@ -87,3 +89,6 @@ $bosCevap = $soru_sayi - $cevaplananSoruSayisi;
 
 </html>
 <script src="../js/index.js"></script>
+<?php }else{
+    echo "404";
+} ?>

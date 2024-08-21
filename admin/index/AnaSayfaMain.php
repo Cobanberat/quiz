@@ -20,7 +20,7 @@ $AnS2 = $conn->query("select * from anasayfabilgi where id = 2")->fetch(PDO::FET
     <div class="container">
         <?php include "header.php"; ?>  
         <div id="body">
-            <div class="spanA">
+            <div class="container">
                 <span class="adminSpan">
                     Ana Sayfa İçerikleri
                 </span>
@@ -78,11 +78,11 @@ $AnS2 = $conn->query("select * from anasayfabilgi where id = 2")->fetch(PDO::FET
                     </thead>
                     <tbody>
                         <tr>
-                            <td><?= $AnS2["id"] ?></td>
-                            <td><?= $AnS2["email"] ?></td>
-                            <td><?= $AnS2["metin"] ?></td>
+                            <td class="td"><?= $AnS2["id"] ?></td>
+                            <td class="td"><?= $AnS2["email"] ?></td>
+                            <td class="td"><?= $AnS2["metin"] ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <button type="button" id="buttonEd" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     değiştir
                                 </button>
                             </td>

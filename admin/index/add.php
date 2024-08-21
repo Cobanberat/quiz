@@ -23,11 +23,27 @@
                     include "../add/kategoriAdd.php";
                 } elseif ($id != "quiz" && $id != "question" && $id != "category") {
                     echo "<h3 style='color:white;'>404 Sayfa Bulunamadı! Yönlendiriliyor...</h3>";
-                    header("refresh:3;url=../index/admin.php" );
-                } 
+                    header("refresh:3;url=../index/admin.php");
+                }
                 ?>
             </div>
         </div>
     </div>
 </body>
 <script src="../js/admin.js"></script>
+<style>
+    @media (max-width: 550px) {
+        .cardAb {
+            width: 60%;
+        }
+
+    }
+
+    @media (max-width: 400px) {
+        .cardAb {
+            width: 80%;
+            height: 100%;
+        }
+
+    }
+</style>

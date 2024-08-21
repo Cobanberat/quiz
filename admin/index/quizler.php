@@ -25,7 +25,7 @@ $quizler = $conn->query("SELECT * FROM quizler")->fetchAll(PDO::FETCH_ASSOC);
         <br>
 
         <div class="bodys">
-            <div class="spanA">
+            <div class="container">
                 <span class="adminSpan">
                     Quizler
                 </span>

@@ -5,6 +5,7 @@
         <span><?= $kullanicilar["isim"] ?></span>
     </div>
     <div class="row">
+        <a href="profile.php"><span id="dropdawnSpan"><i class="bi bi-person-fill"></i>profilim</span></a>
         <a href="index.php"><span id="dropdawnSpan"><i class="bi bi-house"></i>Ana Sayfa</span></a>
         <a href="iletisim.php"><span id="dropdawnSpan"><i class="bi bi-telephone"></i>İletişim</span></a>
         <a href="quizList.php"><span id="dropdawnSpan"><i class="bi bi-person-raised-hand"></i> Quizler</span></a>

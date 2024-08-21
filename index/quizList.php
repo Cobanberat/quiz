@@ -28,24 +28,24 @@
                     <?php } ?>
                 </select>
             </div>
-        </div>
-        <br>
-        <div class="cards">
-            <?php $quiz = $conn->query("select * from quizler where id")->fetchAll(PDO::FETCH_ASSOC); ?>
-            <?php foreach ($quiz as $row) : ?>
-                <div id="cardC" class="quiz<?= $row['kategori_id'] ?>">
-                    <div class="ust"></div>
-                    <div id="img">
-                        <img src="../img/<?= $row["img"] ?>">
+
+            <div class="cards">
+                <?php $quiz = $conn->query("select * from quizler where id")->fetchAll(PDO::FETCH_ASSOC); ?>
+                <?php foreach ($quiz as $row) : ?>
+                    <div id="cardC" class="quiz<?= $row['kategori_id'] ?>">
+                        <div class="ust"></div>
+                        <div id="img">
+                            <img src="../img/<?= $row["img"] ?>">
+                        </div>
+                        <div class="text">
+                            <span><?= $row["name"] ?></span>
+                        </div>
+                        <div class="alt">
+                            <a href="solve.php?id=<?= $row["id"]; ?>"> <button class="buttonS">Çözmeye Başla</button></a>
+                        </div>
                     </div>
-                    <div class="text">
-                        <span><?= $row["name"] ?></span>
-                    </div>
-                    <div class="alt">
-                        <a href="solve.php?id=<?= $row["id"]; ?>"> <button class="buttonS">Çözmeye Başla</button></a>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </body>

@@ -3,7 +3,8 @@ session_start();
 include "../../connect/connect.php";
 $kategoriler = $conn->query("SELECT * FROM kategoriler")->fetchAll(PDO::FETCH_ASSOC);
 
-function categoriA($dizi, $ustKategori = 0) {
+function categoriA($dizi, $ustKategori = 0)
+{
     $dal = array();
     foreach ($dizi as $value) {
         if ($value["ust_id"] == $ustKategori) {
@@ -40,49 +41,52 @@ $kategori_agaci = categoriA($kategoriler);
         <?php include "header.php"; ?>
 
         <div class="bodys">
-            <div class="spanA">
+            <div class="container">
                 <span class="adminSpan">Kategoriler</span>
             </div>
-            <div class="quizList">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Ad</th>
-                                <th>İşlem</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-                            function kategori($categories) {
-                                foreach ($categories as $kategori) : ?>
-                                    <tr>
-                                        <td><?= $kategori['id']; ?></td>
-                                        <td><?= $kategori['name']; ?></td>
-                                        <td>
-                                            <?php if (!empty($kategori['alt'])): ?>
-                                                <button class="btn btn-dark btn-sm" onclick="toggleSubCategory(<?= $kategori['id']; ?>)">Alt Kategori <i id="icon-<?= $kategori['id']; ?>" class="bi bi-chevron-down btn-icon"></i></button>
-                                            <?php endif; ?>
-                                            <a href="Kategoriedit.php?id=<?= $kategori['id']; ?>" class="btn btn-warning btn-sm">Düzenle</a>
-                                            <a href="javascript:void(0);" onclick="Delete('../form/deleteKategoriForm.php?id=<?= $kategori['id']; ?>')" class="btn btn-danger btn-sm">Sil</a>
-                                        </td>
-                                    </tr>
-                                    <?php if (!empty($kategori['alt'])) : ?>
-                                        <tr id="subcategory-<?= $kategori['id']; ?>" class="sub-category-row" style="display: none;">
-                                            <td colspan="3">
-                                                <table class="table">
-                                                    <?php kategori($kategori['alt']); ?>
-                                                </table>
+            <div class="container">
+                <div class="quizList">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ad</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                function kategori($categories)
+                                {
+                                    foreach ($categories as $kategori) : ?>
+                                        <tr>
+                                            <td><?= $kategori['id']; ?></td>
+                                            <td><?= $kategori['name']; ?></td>
+                                            <td>
+                                                <?php if (!empty($kategori['alt'])): ?>
+                                                    <button class="btn btn-dark btn-sm" onclick="toggleSubCategory(<?= $kategori['id']; ?>)">Alt Kategori <i id="icon-<?= $kategori['id']; ?>" class="bi bi-chevron-down btn-icon"></i></button>
+                                                <?php endif; ?>
+                                                <a href="Kategoriedit.php?id=<?= $kategori['id']; ?>" class="btn btn-warning btn-sm">Düzenle</a>
+                                                <a href="javascript:void(0);" onclick="Delete('../form/deleteKategoriForm.php?id=<?= $kategori['id']; ?>')" class="btn btn-danger btn-sm">Sil</a>
                                             </td>
                                         </tr>
-                                    <?php endif; ?>
+                                        <?php if (!empty($kategori['alt'])) : ?>
+                                            <tr id="subcategory-<?= $kategori['id']; ?>" class="sub-category-row" style="display: none;">
+                                                <td colspan="3">
+                                                    <table class="table">
+                                                        <?php kategori($kategori['alt']); ?>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        <?php endif; ?>
                                 <?php endforeach;
-                            }
-                            kategori($kategori_agaci);
-                            ?>
-                        </tbody>
-                    </table>
+                                }
+                                kategori($kategori_agaci);
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +106,8 @@ $kategori_agaci = categoriA($kategoriler);
         table-layout: fixed;
     }
 
-    th, td {
+    th,
+    td {
         text-align: center;
         word-wrap: break-word;
     }
@@ -250,4 +255,3 @@ if (isset($_SESSION["message"])) {
     }
 </style>
 <?php unset($_SESSION["message"]); ?>
-

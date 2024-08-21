@@ -11,7 +11,14 @@ if ($id) {
         if ($quizler) {
             foreach ($quizler as $quiz) {
                 $quizId = $quiz["id"];
-
+                $cq = $conn->query("select * from cozulenquiz where quiz_id = $quizId")->fetchAll(PDO::FETCH_ASSOC);
+                if($cq){
+                    foreach($cq as $value){
+                        $sorgu = $conn->prepare("DELETE FROM cozulenquiz where id = :id");
+                        $sorgu->bindParam(':id', $value["id"], PDO::PARAM_INT);
+                        $sorgu->execute();
+                    }
+                }
                 $sorular = $conn->query("SELECT * FROM sorular WHERE quiz_id = $quizId")->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($sorular as $soru) {
@@ -35,21 +42,17 @@ if ($id) {
                 $delete->bindParam(":id", $quizId, PDO::PARAM_INT);
                 $delete->execute();
             }
-            header("location:../index/kategoriler.php");
             $_SESSION["message"] = [
                 "durum" => true
             ];
 
         } else {
-            header("Location: ../index/kategoriler.php");
         }
 
-        header("location:../index/kategoriler.php");
         $_SESSION["message"] = [
             "durum" => true
         ];
     } else {
-        header("location:../index/kategoriler.php");
         $_SESSION["message"] = [
             "durum" => false
         ];
